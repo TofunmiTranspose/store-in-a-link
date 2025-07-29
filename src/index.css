@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+.btn {
+  padding: 10px 20px;
+  margin-right: 6px;
+  border-radius: 5px;
+  border: 0.6px solid #ccc;
+  cursor: pointer;
+}
+.sbtn {
+  padding: 2px 5px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: 0.5px solid #ccc;
+  cursor: pointer;
+}
+.side-label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.side-label input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.side-label input:checked ~ .checkmark::after {
+  display: block;
+}
+.side-label .checkmark::after {
+  top: 6.6px;
+  left: 6.5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.line {
+  margin-top: 3rem;
+  border-color: #f7f7f7;
+}
