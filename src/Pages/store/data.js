@@ -1,0 +1,23 @@
+const sampleProducts = [
+  { id: 1, name: "Ankara Maxi Dress", price: 9500 },
+  { id: 2, name: "Lace Wrapper Set", price: 12000 },
+  { id: 3, name: "Kente Cap", price: 2500 },
+  { id: 4, name: "Dashiki Shirt", price: 8500 },
+  { id: 5, name: "African Print Skirt", price: 7000 },
+  { id: 6, name: "Beaded Necklace", price: 3000 },
+  { id: 7, name: "Leather Sandals", price: 6500 },
+  { id: 8, name: "Adire Headwrap", price: 2000 },
+  { id: 9, name: "Maasai Bracelet", price: 1500 },
+  { id: 10, name: "Tribal Tote Bag", price: 4000 },
+  { id: 11, name: "Wax Print Shorts", price: 5500 },
+  { id: 12, name: "African Print Blouse", price: 6000 },
+  { id: 13, name: "Batik Scarf", price: 3500 },
+  { id: 14, name: "Cowrie Earrings", price: 1800 },
+  { id: 15, name: "Brocade Kaftan", price: 11000 },
+  { id: 16, name: "Zulu Beads Set", price: 5000 },
+  { id: 17, name: "Embroidered Cap", price: 3200 },
+  { id: 18, name: "Aso Oke Wrapper", price: 9500 },
+  { id: 19, name: "African Sandals", price: 7200 },
+  { id: 20, name: "Linen Tunic Dress", price: 8800 },
+];
+export default sampleProducts;
