@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
 import StoreView from "./pages/StoreView";
 import Settings from "./Pages/Settings";
 import DashboardLayout from "./Components/DasboardLayout";
 import Product from "./Pages/Product";
+import Landing from "./Pages/Landing";
 
 export default function App() {
   return (
