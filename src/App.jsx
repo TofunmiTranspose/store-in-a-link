@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Landing Page
-import Landing from "./Pages/Dashboard/Landing";
-
+import Landing from "./Pages/Landing";
 // Seller Dashboard Pages
 import DashboardLayout from "./Components/DasboardLayout";
 import Dashboard from "./pages/dashboard/Dashboard";
