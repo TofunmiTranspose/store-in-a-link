@@ -93,13 +93,13 @@ export default function StoreFront() {
           <span className="text-sm font-semibold">{cart.length}</span>
         </button>
       )}
-      {/* Cart Drawer (Mobile) */}
+      {/* Cart Drawer */}
       <div
-        className={`sm:hidden fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform transition-transform duration-300 ${
           showCart ? "translate-x-0" : "translate-x-full"
         } z-50`}
       >
-        <div className="flex justify-between items-center p-4 border-b">
+        <div className="flex justify-between items-center p-4  border-gray-300 border-gray-300">
           <h2 className="font-bold text-lg">Your Cart</h2>
           <button onClick={() => setShowCart(false)}>
             <FiX className="text-xl" />
@@ -109,7 +109,7 @@ export default function StoreFront() {
           {cart.map((item) => (
             <div
               key={item.id}
-              className="flex justify-between items-center text-sm border-b pb-2"
+              className="flex justify-between items-center text-sm border-b border-gray-300 pb-2"
             >
               <div>
                 {item.name}
@@ -135,7 +135,7 @@ export default function StoreFront() {
             </div>
           ))}
         </div>
-        <div className="p-4 border-t">
+        <div className="p-4 border-t border-gray-300">
           <p className="font-semibold mb-2">Total: ₦{total.toLocaleString()}</p>
           <a
             href={whatsappCheckout}
@@ -146,57 +146,6 @@ export default function StoreFront() {
             Checkout on WhatsApp
           </a>
         </div>
-      </div>
-      {/* Cart Page Side Panel (Desktop / Tablet) */}
-      <div className="hidden sm:block fixed top-0 right-0 w-96 h-full bg-white border-l shadow-lg p-6 overflow-y-auto">
-        <h2 className="font-bold text-xl mb-4">Your Cart</h2>
-        {cart.length === 0 ? (
-          <p className="text-slate-500">Your cart is empty.</p>
-        ) : (
-          <>
-            <div className="space-y-3">
-              {cart.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex justify-between items-center text-sm border-b pb-2"
-                >
-                  <div>
-                    {item.name}
-                    <div className="flex items-center gap-2 mt-1">
-                      <button
-                        onClick={() => decrementQty(item.id)}
-                        className="bg-orange-200 px-2 rounded"
-                      >
-                        -
-                      </button>
-                      <span>{item.qty}</span>
-                      <button
-                        onClick={() => incrementQty(item.id)}
-                        className="bg-orange-200 px-2 rounded"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                  <div className="font-semibold">
-                    ₦{(item.qty * item.price).toLocaleString()}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-4">
-              <p className="font-semibold">Total: ₦{total.toLocaleString()}</p>
-              <a
-                href={whatsappCheckout}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-center bg-orange-600 text-white py-2 mt-3 rounded-lg"
-              >
-                Checkout on WhatsApp
-              </a>
-            </div>
-          </>
-        )}
       </div>
     </div>
   );
