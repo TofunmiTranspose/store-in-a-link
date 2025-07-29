@@ -36,7 +36,7 @@ function App() {
         </Route>
 
         {/* Public Storefront */}
-        <Route path="/rebecca" element={<StoreFront />} />
+        <Route path="/me" element={<StoreFront />} />
 
         {/* 404 Fallback */}
         <Route path="*" element={<NotFound />} />
