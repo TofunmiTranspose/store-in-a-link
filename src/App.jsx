@@ -1,25 +1,49 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import Orders from "./pages/Orders";
-import StoreView from "./pages/StoreView";
-import Settings from "./Pages/Settings";
-import DashboardLayout from "./Components/DasboardLayout";
-import Product from "./Pages/Product";
-import Landing from "./Pages/Landing";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-export default function App() {
+// Landing Page
+import Landing from "./Pages/Dashboard/Landing";
+
+// Seller Dashboard Pages
+import DashboardLayout from "./Components/DasboardLayout";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Product from "./pages/dashboard/Product";
+import Orders from "./pages/dashboard/Orders";
+import Settings from "./pages/dashboard/Settings";
+
+// Public Store Page
+import StoreFront from "./Pages/store/StoreFront";
+
+// 404 Fallback
+const NotFound = () => (
+  <div className="text-center mt-20 text-slate-500">
+    <h2 className="text-2xl font-bold">404 - Page Not Found</h2>
+    <p>The page you are looking for doesn’t exist.</p>
+  </div>
+);
+
+function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
+        {/* Landing Page */}
         <Route path="/" element={<Landing />} />
-        <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/products" element={<Product />} />
-          <Route path="/dashboard/orders" element={<Orders />} />
-          <Route path="/dashboard/settings" element={<Settings />} />
+
+        {/* Seller Dashboard with layout */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="products" element={<Product />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
-        <Route path="/:storename" element={<StoreView />} />
+
+        {/* Public Storefront */}
+        <Route path="/:handle" element={<StoreFront />} />
+
+        {/* 404 Fallback */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
+
+export default App;

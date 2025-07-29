@@ -1,4 +1,4 @@
-import NoItems from "../Components/NoItems";
+import NoItems from "../../Components/NoItems";
 
 function Products({ result }) {
   return (
