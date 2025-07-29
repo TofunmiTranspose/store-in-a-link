@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./Pages/Landing";
 // Seller Dashboard Pages
 import DashboardLayout from "./Components/DasboardLayout";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Product from "./pages/dashboard/Product";
-import Orders from "./pages/dashboard/Orders";
-import Settings from "./pages/dashboard/Settings";
+import Dashboard from "./Pages/seller/Dashboard";
+import Product from "./Pages/seller/Product";
+import Orders from "./Pages/seller/Orders";
+import Settings from "./Pages/seller/Settings";
 
 // Public Store Page
 import StoreFront from "./Pages/store/StoreFront";
