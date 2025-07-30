@@ -5,8 +5,8 @@ import flat from "./flat.jpg";
 import ankara from "./download.avif";
 import ankara1 from "./download1.avif";
 import ankara2 from "./download2.avif";
-
-
+import ankara3 from "./shopping.avif";
+import ankara4 from "./shopping1.avif";
 
  const assets = {
   sneaker1,
