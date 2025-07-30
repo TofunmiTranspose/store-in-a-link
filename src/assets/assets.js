@@ -3,6 +3,9 @@ import sneaker2 from "./sneaker2.webp";
 import sneaker3 from "./sneaker3.jpg";
 import flat from "./flat.jpg";
 import ankara from "./download.avif";
+import ankara1 from "./download1.avif";
+import ankara2 from "./download2.avif";
+
 
 
  const assets = {
@@ -11,5 +14,8 @@ import ankara from "./download.avif";
   sneaker3,
   flat,
   ankara,
+  ankara1,
+  ankara2,
+
 };
 export default assets;
