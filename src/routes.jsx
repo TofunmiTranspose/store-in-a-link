@@ -12,8 +12,8 @@ import ProductPage from "./Pages/storefront/ProductPage";
 import Checkout from "./Pages/storefront/Checkout";
 import Success from "./Pages/storefront/Success";
 import OrderHistory from "./Pages/storefront/OrderHistory";
-import ProtectedRoute from "./components/ProtectedRoute";
-import RequireStoreSetup from "./components/RequireStoreSetup";
+import ProtectedRoute from "./Components/ProtectedRoute";
+import RequireStoreSetup from "./Components/RequireStoreSetup";
 import Landing from "./Pages/Landing";
 //import StoreLayout from "./layouts/StoreLayout";
 import StoreFront from './Pages/store/StoreFront'
