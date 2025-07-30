@@ -66,7 +66,7 @@ export default function Landing() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="border-2 border-gray-300 rounded-xl overflow-hidden shadow-lg mx-auto max-w-md bg-white"
+            className="border border-gray-300 rounded-xl overflow-hidden shadow-lg mx-auto max-w-md bg-white"
           >
             <div className="p-4 border-b border-gray-300">
               <h3 className="text-lg font-bold text-orange-500">
