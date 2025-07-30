@@ -16,6 +16,8 @@ import ankara4 from "./shopping1.avif";
   ankara,
   ankara1,
   ankara2,
+  ankara3,
+  ankara4,
 
 };
 export default assets;
