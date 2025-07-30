@@ -113,7 +113,7 @@ function DashboardHome() {
                 className="bg-white p-3 rounded-lg shadow hover:shadow-md transition"
               >
                 <img
-                  src={prod.imageURL || "/placeholder.jpg"}
+                  src={prod.image || "/placeholder.jpg"}
                   alt={prod.name}
                   className="aspect-square w-full object-cover rounded-lg mb-2"
                 />
