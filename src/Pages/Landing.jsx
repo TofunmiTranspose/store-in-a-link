@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import assets from "../assets/assets.js";
 
 export default function Landing() {
   return (
