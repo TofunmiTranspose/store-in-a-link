@@ -9,7 +9,7 @@ const storeInfo = {
 
 import sampleProducts from "./data"; // Assuming you have a sampleProducts.js file with product data
 
-export default function StoreFront() {
+function StoreFront() {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
@@ -150,3 +150,4 @@ export default function StoreFront() {
     </div>
   );
 }
+export default StoreFront;
