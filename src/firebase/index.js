@@ -7,11 +7,11 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: `${import.meta.env.API_KEY}`,
-  authDomain: "store-in-a-link-saas.firebaseapp.com",
-  projectId: "store-in-a-link-saas",
-  storageBucket: "store-in-a-link-saas.firebasestorage.app",
-  messagingSenderId: "524578981747",
-  appId: "1:524578981747:web:6b7beccea2767b631c2706",
+  authDomain: `${import.meta.env.AUTH_DOMAIN}`,
+  projectId: `${import.meta.env.PROJECT_ID}`,
+  storageBucket: `${import.meta.env.STORAGE_BUCKET}`,
+  messagingSenderId: `${import.meta.env.MESSAGING_SENDER_ID}`,
+  appId: `${import.meta.env.APP_ID}`,
 };
 
 const app = initializeApp(firebaseConfig);
