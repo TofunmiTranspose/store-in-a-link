@@ -77,10 +77,10 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 p-4">
-              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse--"><img src={assets.ankara} className="w-full h-full" /></div>
+              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse--"><img src={assets.ankara3} className="w-full h-full" /></div>
               <div className="bg-orange-100 aspect-square rounded-lg animate-pulse--"><img src={assets.ankara1} className="w-full h-full" /></div>
               <div className="bg-orange-100 aspect-square rounded-lg animate-pulse--"><img src={assets.ankara2} className="w-full h-full" /></div>
-              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse"></div>
+              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse"><img src={assets.ankara4} className="w-full h-full" /></div>
             </div>
           </motion.div>
         </div>
