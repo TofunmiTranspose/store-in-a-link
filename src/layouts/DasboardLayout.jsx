@@ -1,5 +1,17 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, db } from "../firebase";
+console.log(auth.currentUser);
+
+import {
+  getDoc,
+  collection,
+  getDocs,
+  doc,
+  query,
+  where,
+} from "firebase/firestore";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const menu = [
@@ -11,8 +23,44 @@ const menu = [
 
 export default function DashboardLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [store, setStore] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (firebaseUser) {
+        const uid = firebaseUser.uid;
+        console.log("🔥 Logged-in UID:", uid); // ✅
+
+        setUser(firebaseUser);
+
+        const storeRef = doc(db, "stores", uid);
+        const storeSnap = await getDoc(storeRef);
+
+        console.log("📦 Store exists:", storeSnap.exists()); // ✅
+
+        if (!storeSnap.exists()) {
+          navigate("/setup");
+          return;
+        }
+
+        const storeData = storeSnap.data();
+        console.log("✅ Store data:", storeData); // ✅
+
+        setStore({ uid, ...storeData });
+        setLoading(false);
+      } else {
+        navigate("/login");
+      }
+    });
+
+    return () => unsub();
+  }, [navigate]);
+
+  if (loading) return <p className="p-10 text-center">Loading...</p>;
   return (
     <div className="min-h-screen flex bg-orange-50 text-slate-800">
       {/* Sidebar */}
@@ -71,7 +119,7 @@ export default function DashboardLayout() {
 
       {/* Main Content */}
       <main className="flex-1 p-6 pt-12">
-        <Outlet />
+        <Outlet context={{ store, user }} />
       </main>
     </div>
   );

@@ -1,59 +1,35 @@
+import { useOutletContext } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase";
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth, db } from "../../firebase";
-import {
-  getDoc,
-  doc,
-  collection,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
 import { FiCopy } from "react-icons/fi";
 
 function DashboardHome() {
-  const [user, setUser] = useState(null);
-  const [store, setStore] = useState({});
+  const { store, user } = useOutletContext(); // 🧠 get from parent
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (firebaseUser) => {
-      if (firebaseUser) {
-        setUser(firebaseUser);
-        await fetchData(firebaseUser.uid);
-        setLoading(false);
-      }
-    });
+    if (!user) return;
 
-    return () => unsub();
-  }, []);
+    const fetchData = async () => {
+      const prodSnap = await getDocs(
+        query(collection(db, "products"), where("ownerId", "==", user.uid))
+      );
+      setProducts(prodSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
 
-  const fetchData = async (uid) => {
-    const storeSnap = await getDoc(doc(db, "users", uid));
-    const storeData = storeSnap.data();
-    setStore(storeData || {});
-    console.log(storeSnap);
-    
+      const orderSnap = await getDocs(
+        query(collection(db, "orders"), where("storeId", "==", user.uid))
+      );
+      setOrders(orderSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    };
 
-    const prodSnap = await getDocs(
-      query(collection(db, "products"), where("ownerId", "==", uid))
-    );
-    setProducts(prodSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-
-    const orderSnap = await getDocs(
-      query(collection(db, "orders"), where("storeId", "==", uid))
-    );
-    setOrders(orderSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-  };
-
+    fetchData();
+  }, [user]);
+  
   const storeUrl = `https://storein.link/${store?.handle || "yourstore"}`;
   const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
-  const recentOrders = orders.slice(0, 3);
-  const themeColor = store.themeColor || "#f97316";
-
-  if (loading) return <p className="text-center py-10">Loading dashboard...</p>;
+  const themeColor = store?.themeColor || "#f97316";
 
   return (
     <div className="max-w-6xl mx-auto space-y-10 p-4">
@@ -179,4 +155,5 @@ function DashboardHome() {
     </div>
   );
 }
+
 export default DashboardHome;
