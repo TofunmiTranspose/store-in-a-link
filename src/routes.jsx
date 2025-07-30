@@ -9,7 +9,7 @@ import Orders from "./Pages/dashboard/Orders";
 import Settings from "./Pages/dashboard/Settings";
 //import StoreHome from "./pages/storefront/StoreHome";
 //import ProductPage from "./pages/storefront/ProductPage";
-import Checkout from "./pages/storefront/Checkout";
+//import Checkout from "./pages/storefront/Checkout";
 import Success from "./pages/storefront/Success";
 import OrderHistory from "./pages/storefront/OrderHistory";
 import ProtectedRoute from "./components/ProtectedRoute";
