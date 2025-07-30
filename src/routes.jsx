@@ -15,7 +15,7 @@ import OrderHistory from "./Pages/storefront/OrderHistory";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import RequireStoreSetup from "./Components/RequireStoreSetup";
 import Landing from "./Pages/Landing";
-//import StoreLayout from "./layouts/StoreLayout";
+import StoreLayout from "./layouts/StoreLayout";
 import StoreFront from './Pages/store/StoreFront'
 
 export default function AppRoutes() {
@@ -56,8 +56,8 @@ export default function AppRoutes() {
       </Route>
 
       {/* 🛍 Public Storefront */}
-      {/* <Route path="/:handle" element={<StoreHome />}>
-        <Route index element={<StoreFront />} />
+      <Route path="/:handle" element={<StoreLayout />}>
+        <Route index element={<StoreHome />} />
         <Route path="product/:slug" element={<ProductPage />} />
         <Route path="/:handle/cart" element={<Checkout />} />
         <Route path="/:handle" element={<Success />} />
@@ -69,8 +69,8 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
-      </Route> */}
-      <Route path="/:handle" element={<StoreFront/>}/>
+      </Route>
+      {/* <Route path="/:handle" element={<StoreFront/>}/> */}
     </Routes>
   );
 }

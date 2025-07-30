@@ -34,6 +34,8 @@ function DashboardHome() {
     const storeSnap = await getDoc(doc(db, "users", uid));
     const storeData = storeSnap.data();
     setStore(storeData || {});
+    console.log(storeSnap);
+    
 
     const prodSnap = await getDocs(
       query(collection(db, "products"), where("ownerId", "==", uid))

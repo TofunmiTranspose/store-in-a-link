@@ -32,7 +32,7 @@ export default function Landing() {
           className="flex justify-center gap-4"
         >
           <Link
-            to="/dashboard"
+            to="/login"
             className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-200 shadow-md"
           >
             Get Started Free
