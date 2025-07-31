@@ -88,8 +88,8 @@ export default function Orders() {
               {orders.map((order) => (
                 <tr key={order.id} className="border-t hover:bg-orange-50">
                   <td className="py-2 px-4">
-                    {order.name} <br />
-                    <span className="text-xs text-gray-500">{order.phone}</span>
+                    {order.buyer.name} <br />
+                    <span className="text-xs text-gray-500">{order.buyer.phone}</span>
                   </td>
                   <td className="py-2 px-4">{order.productName}</td>
                   <td className="py-2 px-4">{order.total}</td>
