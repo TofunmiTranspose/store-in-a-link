@@ -151,7 +151,7 @@ function DashboardHome() {
                 recentOrders.map((order, idx) => (
                   <tr key={order.id} className="border-t">
                     <td className="py-2 px-4">
-                      {order.customer?.name || "N/A"}
+                      {order.buyer?.name || "N/A"}
                     </td>
                     <td className="py-2 px-4">
                       {order.items?.[0]?.name || "Multiple"}
