@@ -48,7 +48,7 @@ function DashboardHome() {
     setOrders(orderSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
   };
 
-  const storeUrl = `https://storein.link/${store?.handle || "yourstore"}`;
+  const storeUrl = `https://storein.link.vercel.app/${store?.handle || "yourstore"}`;
   const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
   const recentOrders = orders.slice(0, 3);
   const themeColor = store.themeColor || "#f97316";
