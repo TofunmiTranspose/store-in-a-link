@@ -91,7 +91,7 @@ export default function Orders() {
                     {order.buyer.name} <br />
                     <span className="text-xs text-gray-500">{order.buyer.phone}</span>
                   </td>
-                  <td className="py-2 px-4">{order.productName}</td>
+                  <td className="py-2 px-4">{order.items[0].name}</td>
                   <td className="py-2 px-4">{order.total}</td>
                   <td className="py-2 px-4 font-medium">
                     <span
