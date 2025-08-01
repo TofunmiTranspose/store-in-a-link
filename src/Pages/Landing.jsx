@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import assets from "../assets/assets.js";
 
 export default function Landing() {
   return (
@@ -65,9 +66,9 @@ export default function Landing() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="border rounded-xl overflow-hidden shadow-lg mx-auto max-w-md bg-white"
+            className="border border-gray-300 rounded-xl overflow-hidden shadow-lg mx-auto max-w-md bg-white"
           >
-            <div className="p-4 border-b">
+            <div className="p-4 border-b border-gray-300">
               <h3 className="text-lg font-bold text-orange-500">
                 @rebeccas_fabrics
               </h3>
@@ -76,10 +77,10 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 p-4">
-              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse"></div>
-              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse"></div>
-              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse"></div>
-              <div className="bg-orange-100 aspect-square rounded-lg animate-pulse"></div>
+              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse--"><img src={assets.ankara3} className="w-full h-full" /></div>
+              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse--"><img src={assets.ankara1} className="w-full h-full" /></div>
+              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse--"><img src={assets.ankara2} className="w-full h-full" /></div>
+              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse"><img src={assets.ankara4} className="w-full h-full" /></div>
             </div>
           </motion.div>
         </div>

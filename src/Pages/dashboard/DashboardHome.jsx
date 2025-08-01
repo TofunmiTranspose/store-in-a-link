@@ -24,10 +24,14 @@ function DashboardHome() {
       setOrders(orderSnap.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
     };
 
+<<<<<<< HEAD
     fetchData();
   }, [user]);
   
   const storeUrl = `https://storein.link/${store?.handle || "yourstore"}`;
+=======
+  const storeUrl = `https://store-in-a-link.vercel.app/${store?.handle || "yourstore"}`;
+>>>>>>> 3fbaacafed3a8dc401bc5da926f96f7b54674ff1
   const totalRevenue = orders.reduce((sum, o) => sum + (o.total || 0), 0);
   const themeColor = store?.themeColor || "#f97316";
 
@@ -89,7 +93,7 @@ function DashboardHome() {
                 className="bg-white p-3 rounded-lg shadow hover:shadow-md transition"
               >
                 <img
-                  src={prod.imageURL || "/placeholder.jpg"}
+                  src={prod.image || "/placeholder.jpg"}
                   alt={prod.name}
                   className="aspect-square w-full object-cover rounded-lg mb-2"
                 />
@@ -127,7 +131,7 @@ function DashboardHome() {
                 recentOrders.map((order, idx) => (
                   <tr key={order.id} className="border-t">
                     <td className="py-2 px-4">
-                      {order.customer?.name || "N/A"}
+                      {order.buyer?.name || "N/A"}
                     </td>
                     <td className="py-2 px-4">
                       {order.items?.[0]?.name || "Multiple"}
