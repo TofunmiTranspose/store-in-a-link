@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import assets from "../assets/assets.js";
+import assets from "../assets/assets";
 
 export default function Landing() {
   return (
@@ -34,13 +34,13 @@ export default function Landing() {
         >
           <Link
             to="/login"
-            className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-all duration-200 shadow-md"
+            className="bg-orange-500 text-white px-3 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-orange-600 trzansition-all duration-200 shadow-md"
           >
             Get Started Free
           </Link>
           <a
             href="#features"
-            className="px-6 py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-100 transition"
+            className="px-3 sm:px-6 py-2 sm:py-3 border border-orange-500 text-orange-500 rounded-lg hover:bg-orange-100 transition"
           >
             See Features
           </a>
@@ -55,7 +55,7 @@ export default function Landing() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-semibold mb-2"
+            className="text-2xl w-9/10 mx-auto font-semibold mb-2"
           >
             This is what your store will look like 👇
           </motion.h2>
@@ -66,7 +66,7 @@ export default function Landing() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
             viewport={{ once: true }}
-            className="border border-gray-300 rounded-xl overflow-hidden shadow-lg mx-auto max-w-md bg-white"
+            className="border w-9/10 border-gray-300 rounded-xl overflow-hidden shadow-lg mx-auto max-w-md bg-white"
           >
             <div className="p-4 border-b border-gray-300">
               <h3 className="text-lg font-bold text-orange-500">
@@ -77,10 +77,34 @@ export default function Landing() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 p-4">
-              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse--"><img src={assets.ankara3} className="w-full h-full" /></div>
-              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse--"><img src={assets.ankara1} className="w-full h-full" /></div>
-              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse--"><img src={assets.ankara2} className="w-full h-full" /></div>
-              <div className="bg-orange-100 aspect-square rounded-lg shadow-md animate-pulse"><img src={assets.ankara4} className="w-full h-full" /></div>
+              <div
+                className={`bg-orange-100 aspect-square rounded-lg ${
+                  assets ? "" : "animate-pulse"
+                }`}
+              >
+                <img src={assets.ankara1} />
+              </div>
+              <div
+                className={`bg-orange-100 aspect-square rounded-lg ${
+                  assets ? "" : "animate-pulse"
+                }`}
+              >
+                <img src={assets.ankara2} />
+              </div>
+              <div
+                className={`bg-orange-100 aspect-square rounded-lg ${
+                  assets ? "" : "animate-pulse"
+                }`}
+              >
+                <img src={assets.ankara3} />
+              </div>
+              <div
+                className={`bg-orange-100 aspect-square rounded-lg ${
+                  assets ? "animate-pulse" : "animate-pulse"
+                }`}
+              >
+                <img src={assets.ankara4} />
+              </div>
             </div>
           </motion.div>
         </div>

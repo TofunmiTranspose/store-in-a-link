@@ -48,7 +48,7 @@ export default function StoreLayout() {
   return (
     <div className="flex min-h-screen bg-[#fefdfc]">
       {/* Mobile Menu Icon */}
-      <div className="sm:hidden fixed top-4 right-4 z-50">
+      <div className="md:hidden fixed top-4 right-4 z-50">
         <button
           onClick={() => setSidebarOpen((prev) => !prev)}
           className="p-2 rounded-md shadow bg-white"
@@ -59,11 +59,10 @@ export default function StoreLayout() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-white border-r shadow-md z-40 transition-transform duration-300 ease-in-out
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-md z-40 transition-transform duration-300 ease-in-out
           ${
             sidebarOpen ? "translate-x-0" : "-translate-x-full"
-          } sm:translate-x-0`}
-        style={{ borderRight: `4px solid ${theme}` }}
+          } md:translate-x-0`}
       >
         <div className="p-6 flex flex-col h-full">
           <Link to={`/${handle}`} className="flex items-center gap-3 mb-6">
@@ -109,7 +108,7 @@ export default function StoreLayout() {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 ml-0 sm:ml-64 ">
+      <main className="flex-1 ml-0 md:ml-64 ">
         <Outlet context={{ store }} theme={[theme, contrast]} />
       </main>
     </div>
